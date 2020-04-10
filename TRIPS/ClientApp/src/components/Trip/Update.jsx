@@ -23,7 +23,7 @@ export class Update extends Component{
     componentDidMount(){
         const {id } = this.props.match.params;
 
-        axios.get("api/Trips/SingleTrip"+id).then(trip=>{
+        axios.get("api/Trips/SingleTrip/"+id).then(trip=>{
             const response = trip.data;
 
             this.setState({
@@ -65,6 +65,7 @@ export class Update extends Component{
         e.preventDefault();
         const {history} = this.props;
         const {id} = this.props.match.params;
+
         let tripObject = {
             name: this.state.name,
             description: this.state.description,
@@ -79,7 +80,7 @@ export class Update extends Component{
     render(){
         return (
             <div className="trip-form" >
-                <h3>Add new trip</h3>
+                <h3>Update trip</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>Trip name:  </label>
