@@ -72,7 +72,7 @@ export class Update extends Component{
             dateStarted: new Date(this.state.dateStarted).toISOString(),
             dateCompleted: this.state.dateCompleted ? new Date(this.state.dateCompleted).toISOString() : null
         }
-        axios.put("api/Trips/updateTrip"+id,tripObject).then(result=>{
+        axios.put("api/Trips/updateTrip/"+id,tripObject).then(result=>{
             history.push('/trips');
         })
     }

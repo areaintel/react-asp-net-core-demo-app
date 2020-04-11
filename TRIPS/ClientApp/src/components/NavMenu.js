@@ -3,6 +3,10 @@ import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLi
 import { Link } from 'react-router-dom';
 import './NavMenu.css';
 
+import { FaPlusSquare } from 'react-icons/fa';
+import { FaSuitcase } from 'react-icons/fa';
+import { FaThList } from 'react-icons/fa';
+
 export class NavMenu extends Component {
   static displayName = NavMenu.name;
 
@@ -26,15 +30,15 @@ export class NavMenu extends Component {
       <header>
         <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" light>
           <Container>
-            <NavbarBrand tag={Link} to="/">TRIPS</NavbarBrand>
+            <NavbarBrand tag={Link} to="/"><FaSuitcase/> TRIPS</NavbarBrand>
             <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
             <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
               <ul className="navbar-nav flex-grow">
                 <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/create">Create</NavLink>
+                  <NavLink tag={Link} className="text-dark" to="/create"><FaPlusSquare/> Create a Trip</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/trips">Trips</NavLink>
+                  <NavLink tag={Link} className="text-dark" to="/trips"><FaThList/> View Trips</NavLink>
                 </NavItem>
               </ul>
             </Collapse>
